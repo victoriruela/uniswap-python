@@ -1100,6 +1100,8 @@ class Uniswap:
     def mint_liquidity(
         self,
         pool: Contract,
+        token_0: str,
+        token_1: str,
         amount_0: int,
         amount_1: int,
         tick_lower: int,
@@ -1110,8 +1112,6 @@ class Uniswap:
         add liquidity to pool and mint position nft
         """
 
-        token_0 = pool.functions.token0().call()
-        token_1 = pool.functions.token1().call()
         token_0_instance = _load_contract(self.w3, abi_name="erc20", address=token_0)
         token_1_instance = _load_contract(self.w3, abi_name="erc20", address=token_1)
 
