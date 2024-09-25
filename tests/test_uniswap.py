@@ -350,6 +350,8 @@ class TestUniswap(object):
         min_tick, max_tick = default_tick_range(fee)
         r = client.mint_liquidity(
             pool,
+            token0,
+            token1,
             amount0,
             amount1,
             tick_lower=min_tick,
