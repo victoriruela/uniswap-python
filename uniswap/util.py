@@ -82,6 +82,10 @@ def _load_contract_erc20(w3: Web3, address: AddressLike) -> Contract:
     return _load_contract(w3, "erc20", address)
 
 
+def load_contract_erc20(w3: Web3, address: AddressLike) -> Contract:
+    return _load_contract(w3, "erc20", address)
+
+
 def _encode_path(token_in: AddressLike, route: List[Tuple[int, AddressLike]]) -> bytes:
     """
     Needed for multi-hop swaps in V3.
