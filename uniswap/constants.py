@@ -31,7 +31,8 @@ _netid_to_name = {
     421611: "arbitrum_testnet",
     1666600000: "harmony_mainnet",
     1666700000: "harmony_testnet",
-    11155111: "sepolia"
+    11155111: "sepolia",
+    31337: "hardhat",
 }
 
 _factory_contract_addresses_v1 = {
@@ -91,6 +92,7 @@ _tick_bitmap_range = {
     10_000: (-18, 17),
 }
 
+
 # https://github.com/Uniswap/uniswap-v3-periphery/blob/main/deploys.md
 class Mainnet:
     factory_contract_address = "0x1F98431c8aD98523631AE4a59f267346ea31F984"
@@ -116,8 +118,17 @@ class Sepolia:
     multicall2_address = "0xD7F33bCdb21b359c8ee6F0251d30E94832baAd07"
 
 
+class HardHat:
+    factory_contract_address = ""
+    quoter_address = ""
+    router_address = ""
+    position_manager_address = ""
+    multicall2_address = ""
+
+
 NET = {
     _netid_to_name[1]: Mainnet,
     _netid_to_name[42161]: Arbitrum,
     _netid_to_name[11155111]: Sepolia,
+    _netid_to_name[31337]: HardHat,
 }

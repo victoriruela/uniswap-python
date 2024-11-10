@@ -40,7 +40,7 @@ from .constants import (
     _netid_to_name,
     _router_contract_addresses_v2,
     _tick_bitmap_range,
-    _tick_spacing, Mainnet, Sepolia, NET,
+    _tick_spacing, NET,
 )
 from .decorators import check_approval, supports
 from .exceptions import InsufficientBalance, InvalidToken

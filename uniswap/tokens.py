@@ -43,6 +43,18 @@ tokens_sepolia: Dict[str, ChecksumAddress] = {
         "WETH": "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9",
         "DAI": "0x7c519c8568c37FBB044F700d41eD80dBD48a435d",
         "USDC": "0x50d3B34E14e4339c6e75906e61a2F4fF44a50915",
+        "USDT": "",
+    }.items()
+}
+
+tokens_hardhat: Dict[str, ChecksumAddress] = {
+    k: Web3.to_checksum_address(v)
+    for k, v in {
+        "ETH": "",
+        "WETH": "",
+        "DAI": "",
+        "USDC": "",
+        "USDT": "",
     }.items()
 }
 
@@ -60,5 +72,7 @@ def get_tokens(netname: str) -> Dict[str, ChecksumAddress]:
         return tokens_arbitrum
     elif netname == "sepolia":
         return tokens_sepolia
+    elif netname == "hardhat":
+        return tokens_hardhat
     else:
         raise Exception(f"Unknown net '{netname}'")
